@@ -1,0 +1,103 @@
+.container {
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  height: 100vh;
+  background-image: url(../img/bckgr-mount.png);
+  background-size: cover;
+  background-position: top;
+  width: 100%;
+  margin-bottom: 89px;
+}
+
+.header__menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.header__logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 40px 0 0 0;
+}
+
+.header__logo-text {
+  color: #ffffff;
+  font-size: 34px;
+  font-weight: 400;
+  letter-spacing: -1.36px;
+  margin: 0;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.header__navigation {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 62px 0 0 0;
+}
+
+.header__navigation-links {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 300;
+  text-align: left;
+  text-decoration: none;
+  padding-right: 30px;
+}
+
+.header__navigation-links_color {
+  color: #c7b299;
+}
+
+.products {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 0 80px 0;
+}
+
+.products-samples {
+  text-align: center;
+  width: 12.5%;
+}
+
+.products-samples__icon {
+  margin-bottom: 30px;
+}
+
+.products-samples__title {
+  color: #555555;
+  font-size: 22px;
+  font-weight: 400;
+  text-align: center;
+  margin: 0 auto 20px;
+}
+
+.products-samples__title_color {
+  color: #c7b299;
+}
+
+.products-samples__text {
+  color: #8c8c8c;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 24px;
+  text-align: center;
+  margin: 0 auto 30px;
+}
+/*# sourceMappingURL=style.css.map */
