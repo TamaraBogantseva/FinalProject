@@ -1,0 +1,309 @@
+$FullHeight: 100vh;
+$FullWidth: 100%;
+$BlockWidth: 80%;
+$LightText: #ffffff;
+
+@mixin Small-title {
+    font-family: "Raleway - Semi Bold";
+    font-weight: 400;
+    color: #555555;
+    font-size: 30px;
+}
+
+.container {
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    min-height: $FullHeight;
+    background-image: url(../img/bckgr-mount.jpg);
+    background-size: cover;
+    background-position: top;
+    background-color: #f4f5f8;
+    width: $FullWidth;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 89px;
+
+    &-menu {
+        display: flex;
+        justify-content: space-around;
+
+
+        &__logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 0 0 0;
+            text-decoration: none;
+
+            &-img {
+                fill: #ffffff;
+            }
+    
+            &-text {
+                color: $LightText;
+                font-size: 34px;
+                font-weight: 400;
+                letter-spacing: -1.36px;
+                margin: 0;
+                align-self: center;
+            }
+        }
+
+        &__logo:hover  &__logo-img {
+            fill: #c7b299;
+        }
+
+        &__logo:hover &__logo-text {
+            color: #c7b299;
+        }
+
+        &__navigation {
+            align-items: center;
+            padding: 62px 0 0 0;
+    
+            &-links {
+                color: $LightText;
+                font-size: 14px;
+                font-weight: 300;
+                text-align: left;
+                text-decoration: none;
+                padding-right: 30px;
+                margin: 0;
+    
+                &_icons {
+                    fill: #ffffff;
+                }
+
+                &_icons:hover {
+                    fill: #c7b299;
+                }
+
+                &_form {
+                    display: inline;
+                    padding-right: 0;
+                }
+            }
+
+            &-links:nth-of-type(9) {
+                display: inline-block;
+                padding-top: 3px;
+            }
+
+
+            &-links:hover {
+                color: #c7b299;
+            }
+        }
+    }
+
+    &-slideshow {
+        flex-grow: 1;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0  auto;
+        width: $FullWidth;
+
+        &__switch {
+            display: block;
+
+            &_arrow {
+                fill: #ffffff;
+            }
+
+            &_arrow:hover {
+                fill: #d3c1ad;
+            }
+        }
+
+        &__switch:nth-of-type(1) {
+            margin: 0 0 0 150px;
+        }
+
+        &__switch:nth-of-type(2) {
+            margin: 0 150px 0 0;
+        }
+
+        &__content {
+            text-align: center;
+            width: $FullWidth/2;
+            margin: 0 auto;
+        }
+
+        &__title {
+            font-size: 36px;
+            line-height: 1.2;
+            font-weight: 500;
+            color: #ffffff;
+            margin: 0 0 5px 0;
+        }
+
+        &__subtitle {
+            font-size: 52px;
+            line-height: 1.2;
+            font-weight: 800;
+            color: #ffffff;
+            margin: 0 0 17px 0;
+        }
+
+        &__text {
+            font-size: 16px;
+            line-height: 24px;
+            font-weight: 300;
+            color: #ffffff;
+            width: 562px;
+            margin: 0 auto 50px auto;
+        }
+
+        &__button {
+            background-color: #998675;
+            border-radius: 3px;
+            text-transform: uppercase;
+            color: #ffffff;
+            font-size: 14px;
+            line-height: 23px;
+            font-weight: 800;
+            padding: 20px 35px;
+        }
+
+        &__pagination {
+            display: flex;
+            align-self: flex-end;
+            justify-content: center;
+            width: $FullWidth;
+            margin: 0 auto;
+            padding-bottom: 35px;
+
+            &_item {
+                display: block;
+                margin-right: 10px;
+
+                &-circle {
+                    fill: #ffffff;
+                    opacity: 0.5;
+                }
+            }
+
+            &_item:nth-of-type(5) {
+                margin-right: 0;
+            }
+
+        }
+    }
+
+}
+
+input[type="search"] {
+    width: 24px;
+    height: 24px;
+    outline: none;
+    background: transparent;
+    background-image: url(../img/icon_search.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    border: none;
+  }
+  
+  input[type="search"]:focus {
+    width: 150px;
+    transition: width 1s ease-out;
+    background-position: right;
+    border: 1px solid #c7b299;
+  }
+
+.products {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto 80px auto;
+    width: $BlockWidth;
+
+    &__header {
+        visibility: hidden;
+    }
+
+    &-samples {
+        text-align: center;
+        width: $BlockWidth/4;
+
+        &__icon {
+            margin-bottom: 30px;
+            fill: #555;
+        }
+
+        &__title {
+            color: #555555;
+            font-size: 22px;
+            font-weight: 400;
+            text-align: center;
+            margin: 0 auto 20px;
+        }
+
+
+        &__text {
+            color: #8c8c8c;
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 24px;
+            text-align: center;
+            margin: 0 auto 30px;
+        }
+
+        &__line {
+            fill: #f1eee9;
+        }
+    }
+
+    &-samples:hover &-samples__title {
+        color: #c7b299;
+    }
+
+    &-samples:hover &-samples__text {
+        color: #c7b299;
+    }
+
+    &-samples:hover &-samples__icon {
+        fill: #c7b299;
+    }
+
+    &-samples:hover &-samples__line {
+        fill: #c7b299;
+    }
+}
+
+.screenshots {
+    background-color: #fbfaf8;
+}
+
+.purchase {
+    background-color: #f4f5f8;
+    background-image: linear-gradient(90.0deg, #211b19 0%, #4e3427 100%);
+    color: #ffffff;
+}
+
+.mobiles {
+    background-image: url(../img/iphone_in_hand.png);
+    background-repeat: no-repeat;
+    background-color: #fbfaf8;
+    min-height: 695px;
+}
+
+.numbers {
+    background-color: #f4f5f8;
+    background-image: linear-gradient(90.0deg, #211b19 0%, #4e3427 100%);
+    color: #ffffff;
+}
+
+.partners {
+    background-image: url(../img/mountain_bottom_background.jpg);
+    min-height: 489px;
+}
+
+.footer {
+    background-color: #191919;
+    color: #ffffff;
+}
