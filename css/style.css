@@ -857,6 +857,7 @@ input[type="search"]:focus {
 }
 
 .video__background {
+  width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   height: 705px;

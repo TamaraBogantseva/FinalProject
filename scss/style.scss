@@ -828,6 +828,7 @@ input[type="search"] {
     background-color: rgba(17,17,17,0.5);
 
     &__background {
+        width: 100%;
         object-fit: cover;
         height: 705px;
         opacity: 0.7;
