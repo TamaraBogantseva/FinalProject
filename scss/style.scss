@@ -186,6 +186,48 @@ table {
     }
 }
 
+@keyframes color-btn {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0.6;
+        background-color: #db9b4d;
+    }
+}
+
+@keyframes slides-left {
+    0% {
+        margin-left: 0px;
+    }
+    60% {
+        margin-left: -100px;
+    }
+    80% {
+        z-index: 4;
+    }
+    100% {
+        margin-left: 0px;
+        z-index: 4;
+    }
+}
+
+@keyframes slides-right {
+    0% {
+        margin-right: 0px;
+    }
+    60% {
+        margin-right: -100px;
+    }
+    80% {
+        z-index: 4;
+    }
+    100% {
+        margin-right: 0px;
+        z-index: 4;
+    }
+}
+
 .header {
     min-height: $FullHeight;
     background-image: url(../img/bckgr-mount.jpg);
@@ -235,6 +277,14 @@ table {
             color: #c7b299;
         }
 
+        &__logo:active &__logo-img {
+            filter: brightness(70%);
+        }
+
+        &__logo:active &__logo-text {
+            filter: brightness(70%);
+        }
+
         &__navigation {
             padding: 62px 0 0 0;
 
@@ -244,6 +294,7 @@ table {
 
             &-list {
                 display: flex;
+                flex-wrap: wrap;
                 list-style: none;
                 margin: 0;
             }
@@ -288,6 +339,10 @@ table {
             &-links:focus {
                 color: #c7b299;
             }
+
+            &-links:active {
+                filter: brightness(70%);
+            }
         }
 
         &__box {
@@ -306,6 +361,14 @@ table {
                 &-icons:focus {
                     fill: #c7b299;
                 }
+
+                &_icons:active {
+                    filter: brightness(70%);
+                }
+            }
+
+            &-search {
+                position: relative;
             }
         }
     }
@@ -335,6 +398,10 @@ table {
             &_arrow:hover,
             &_arrow:focus {
                 fill: #d3c1ad;
+            }
+
+            &_arrow:active {
+                filter: brightness(70%);
             }
         }
 
@@ -445,10 +512,10 @@ input[type="search"] {
     height: 24px;
     outline: none;
     background: transparent;
-    background-image: url(../img/icon_search.svg);
-    background-size: contain;
-    background-repeat: no-repeat;
     border: none;
+    position: absolute;
+    top: 40px;
+    left: -130px;
   }
   
 input[type="search"]:focus {
@@ -570,7 +637,7 @@ input[type="search"]:focus {
 
         &__picture:first-child:hover,
         &__picture:first-child:focus {
-            z-index: 4;
+            animation: slides-left 2s cubic-bezier(.87,.22,.04,.75) forwards;
         }
 
         &__picture:nth-child(2) {
@@ -590,7 +657,7 @@ input[type="search"]:focus {
 
         &__picture:last-child:hover,
         &__picture:last-child:focus {
-            z-index: 4;
+            animation: slides-right 2s cubic-bezier(.87,.22,.04,.75) forwards;
         }
     }
 
@@ -640,6 +707,7 @@ input[type="search"]:focus {
     color: #ffffff;
     width: 100%;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
 
@@ -682,15 +750,13 @@ input[type="search"]:focus {
         border-radius: 3px;
         padding: 18px 28px;
         cursor: pointer;
-        //transition: transform 0.5s cubic-bezier(.42,0,1,1);
-        //transition-delay: 500ms;
+        animation: anim-btn 1s linear infinite, color-btn 2s ease-in infinite alternate;
     }
 
     &__button:hover,
     &__button:focus {
         filter: brightness(70%);
-        //transform: scale(1.5);
-        animation: anim-btn 1s linear 5;
+        animation: paused;
     }
 
     &__button:active {
@@ -734,6 +800,7 @@ input[type="search"]:focus {
 
     &-menu {
         display: flex;
+        flex-wrap: wrap;
         justify-content: center;
         margin-bottom: 40px;
 
@@ -890,6 +957,11 @@ input[type="search"]:focus {
         &__search-icon:hover,
         &__search-icon:focus {
             fill: #c7b299;
+        }
+
+        &__link-icon:active,
+        &__search-icon:active {
+            filter: brightness(70%);
         }
     }
 
@@ -1159,6 +1231,7 @@ input[type="search"]:focus {
             position: relative;
             display: flex;
             flex-direction: column;
+            margin: 0 auto;
         }
 
         &__item:hover &__image {
@@ -1292,6 +1365,33 @@ input[type="search"]:focus {
             left: 4px;
         }
     }
+
+    &-arrows {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        padding-top: 40px;
+        width: 8%;
+        margin: 0 auto;
+
+        &__change {
+            border: 0px;
+            background-color: transparent;
+        }
+
+        &__btn {
+            fill: #d1d1d1;
+        }
+
+        &__btn:hover,
+        &__btn:focus {
+            fill: #c7b299;
+        }
+
+        &__btn:active {
+            filter: brightness(70%);
+        }
+    }
 }
 
 .partners {
@@ -1306,11 +1406,11 @@ input[type="search"]:focus {
 
         &__link {
             display: block;
-            transition: transform 1s ease-in;
+            transition: transform 500ms ease-in;
         }
 
         &__link:hover {
-            transform: scale(1.5) rotate(360deg);
+            transform: scale(1.2);
         }
 
         &__image {
@@ -1394,6 +1494,10 @@ input[type="search"]:focus {
         &__link:hover,
         &__link:focus {
             color: #c7b299;
+        }
+
+        &__link:active {
+            filter: brightness(70%);
         }
     }
 
@@ -1522,6 +1626,12 @@ input[type="search"]:focus {
 
         &__item {
             padding-bottom: 10px;
+            transition: 200ms ease-in;
+        }
+
+        &__item:hover,
+        &__item:focus {
+            transform: scale(1.2);
         }
     }
 
@@ -1611,6 +1721,7 @@ input[type="search"]:focus {
 @media (max-width: 576px) {
     .header {
         &-menu {
+            justify-content: flex-start;
 
             &__logo {
                 display: none;
@@ -1713,7 +1824,12 @@ input[type="search"]:focus {
             }
 
             &__box {
-                display: none;
+                flex-direction: column;
+                padding: 57px 0 0 20px;
+
+                &-links {
+                    padding: 0 0 10px 0;
+                }
             }
         }
 
@@ -1744,6 +1860,10 @@ input[type="search"]:focus {
             transform: rotate(45deg);
             opacity: 0;
         }
+    }
+
+    input[type="search"] {
+        left: 0;
     }
 
 

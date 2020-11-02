@@ -174,6 +174,90 @@ table {
   }
 }
 
+@-webkit-keyframes color-btn {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.6;
+    background-color: #db9b4d;
+  }
+}
+
+@keyframes color-btn {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.6;
+    background-color: #db9b4d;
+  }
+}
+
+@-webkit-keyframes slides-left {
+  0% {
+    margin-left: 0px;
+  }
+  60% {
+    margin-left: -100px;
+  }
+  80% {
+    z-index: 4;
+  }
+  100% {
+    margin-left: 0px;
+    z-index: 4;
+  }
+}
+
+@keyframes slides-left {
+  0% {
+    margin-left: 0px;
+  }
+  60% {
+    margin-left: -100px;
+  }
+  80% {
+    z-index: 4;
+  }
+  100% {
+    margin-left: 0px;
+    z-index: 4;
+  }
+}
+
+@-webkit-keyframes slides-right {
+  0% {
+    margin-right: 0px;
+  }
+  60% {
+    margin-right: -100px;
+  }
+  80% {
+    z-index: 4;
+  }
+  100% {
+    margin-right: 0px;
+    z-index: 4;
+  }
+}
+
+@keyframes slides-right {
+  0% {
+    margin-right: 0px;
+  }
+  60% {
+    margin-right: -100px;
+  }
+  80% {
+    z-index: 4;
+  }
+  100% {
+    margin-right: 0px;
+    z-index: 4;
+  }
+}
+
 .header {
   min-height: 100vh;
   background-image: url(../img/bckgr-mount.jpg);
@@ -240,6 +324,16 @@ table {
   color: #c7b299;
 }
 
+.header-menu__logo:active .header-menu__logo-img {
+  -webkit-filter: brightness(70%);
+          filter: brightness(70%);
+}
+
+.header-menu__logo:active .header-menu__logo-text {
+  -webkit-filter: brightness(70%);
+          filter: brightness(70%);
+}
+
 .header-menu__navigation {
   padding: 62px 0 0 0;
 }
@@ -252,6 +346,8 @@ table {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   list-style: none;
   margin: 0;
 }
@@ -296,6 +392,11 @@ table {
   color: #c7b299;
 }
 
+.header-menu__navigation-links:active {
+  -webkit-filter: brightness(70%);
+          filter: brightness(70%);
+}
+
 .header-menu__box {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -314,6 +415,15 @@ table {
 
 .header-menu__box-links_icons:hover, .header-menu__box-links-icons:focus {
   fill: #c7b299;
+}
+
+.header-menu__box-links_icons:active {
+  -webkit-filter: brightness(70%);
+          filter: brightness(70%);
+}
+
+.header-menu__box-search {
+  position: relative;
 }
 
 .header-slideshow {
@@ -359,6 +469,11 @@ table {
 
 .header-slideshow__switch_arrow:hover, .header-slideshow__switch_arrow:focus {
   fill: #d3c1ad;
+}
+
+.header-slideshow__switch_arrow:active {
+  -webkit-filter: brightness(70%);
+          filter: brightness(70%);
 }
 
 .header-slideshow__content {
@@ -470,10 +585,10 @@ input[type="search"] {
   height: 24px;
   outline: none;
   background: transparent;
-  background-image: url(../img/icon_search.svg);
-  background-size: contain;
-  background-repeat: no-repeat;
   border: none;
+  position: absolute;
+  top: 40px;
+  left: -130px;
 }
 
 input[type="search"]:focus {
@@ -607,7 +722,8 @@ input[type="search"]:focus {
 }
 
 .screenshots-box__picture:first-child:hover, .screenshots-box__picture:first-child:focus {
-  z-index: 4;
+  -webkit-animation: slides-left 2s cubic-bezier(0.87, 0.22, 0.04, 0.75) forwards;
+          animation: slides-left 2s cubic-bezier(0.87, 0.22, 0.04, 0.75) forwards;
 }
 
 .screenshots-box__picture:nth-child(2) {
@@ -626,7 +742,8 @@ input[type="search"]:focus {
 }
 
 .screenshots-box__picture:last-child:hover, .screenshots-box__picture:last-child:focus {
-  z-index: 4;
+  -webkit-animation: slides-right 2s cubic-bezier(0.87, 0.22, 0.04, 0.75) forwards;
+          animation: slides-right 2s cubic-bezier(0.87, 0.22, 0.04, 0.75) forwards;
 }
 
 .screenshots-wrp {
@@ -673,6 +790,8 @@ input[type="search"]:focus {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -ms-flex-pack: distribute;
       justify-content: space-around;
   -webkit-box-align: center;
@@ -719,13 +838,15 @@ input[type="search"]:focus {
   border-radius: 3px;
   padding: 18px 28px;
   cursor: pointer;
+  -webkit-animation: anim-btn 1s linear infinite, color-btn 2s ease-in infinite alternate;
+          animation: anim-btn 1s linear infinite, color-btn 2s ease-in infinite alternate;
 }
 
 .purchase__button:hover, .purchase__button:focus {
   -webkit-filter: brightness(70%);
           filter: brightness(70%);
-  -webkit-animation: anim-btn 1s linear 5;
-          animation: anim-btn 1s linear 5;
+  -webkit-animation: paused;
+          animation: paused;
 }
 
 .purchase__button:active {
@@ -781,6 +902,8 @@ input[type="search"]:focus {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -944,6 +1067,11 @@ input[type="search"]:focus {
 
 .project-cards__search-icon:hover, .project-cards__search-icon:focus {
   fill: #c7b299;
+}
+
+.project-cards__link-icon:active, .project-cards__search-icon:active {
+  -webkit-filter: brightness(70%);
+          filter: brightness(70%);
 }
 
 .project__load-button {
@@ -1267,6 +1395,7 @@ input[type="search"]:focus {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  margin: 0 auto;
 }
 
 .posts-list__item:hover .posts-list__image {
@@ -1408,6 +1537,39 @@ input[type="search"]:focus {
   left: 4px;
 }
 
+.posts-arrows {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 40px;
+  width: 8%;
+  margin: 0 auto;
+}
+
+.posts-arrows__change {
+  border: 0px;
+  background-color: transparent;
+}
+
+.posts-arrows__btn {
+  fill: #d1d1d1;
+}
+
+.posts-arrows__btn:hover, .posts-arrows__btn:focus {
+  fill: #c7b299;
+}
+
+.posts-arrows__btn:active {
+  -webkit-filter: brightness(70%);
+          filter: brightness(70%);
+}
+
 .partners {
   background-image: url(../img/mountain_bottom_background.jpg);
 }
@@ -1428,15 +1590,15 @@ input[type="search"]:focus {
 
 .partners-list__link {
   display: block;
-  -webkit-transition: -webkit-transform 1s ease-in;
-  transition: -webkit-transform 1s ease-in;
-  transition: transform 1s ease-in;
-  transition: transform 1s ease-in, -webkit-transform 1s ease-in;
+  -webkit-transition: -webkit-transform 500ms ease-in;
+  transition: -webkit-transform 500ms ease-in;
+  transition: transform 500ms ease-in;
+  transition: transform 500ms ease-in, -webkit-transform 500ms ease-in;
 }
 
 .partners-list__link:hover {
-  -webkit-transform: scale(1.5) rotate(360deg);
-          transform: scale(1.5) rotate(360deg);
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
 }
 
 .partners-list__image {
@@ -1531,6 +1693,11 @@ input[type="search"]:focus {
 
 .footer-about__link:hover, .footer-about__link:focus {
   color: #c7b299;
+}
+
+.footer-about__link:active {
+  -webkit-filter: brightness(70%);
+          filter: brightness(70%);
 }
 
 .footer-posts {
@@ -1683,6 +1850,13 @@ input[type="search"]:focus {
 
 .footer-widget__item {
   padding-bottom: 10px;
+  -webkit-transition: 200ms ease-in;
+  transition: 200ms ease-in;
+}
+
+.footer-widget__item:hover, .footer-widget__item:focus {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
 }
 
 .footer-info {
@@ -1791,6 +1965,11 @@ input[type="search"]:focus {
 }
 
 @media (max-width: 576px) {
+  .header-menu {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
   .header-menu__logo {
     display: none;
   }
@@ -1914,7 +2093,14 @@ input[type="search"]:focus {
     font-size: 20px;
   }
   .header-menu__box {
-    display: none;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 57px 0 0 20px;
+  }
+  .header-menu__box-links {
+    padding: 0 0 10px 0;
   }
   .header-slideshow__switch, .header-slideshow__text {
     display: none;
@@ -1939,6 +2125,9 @@ input[type="search"]:focus {
     -webkit-transform: rotate(45deg);
             transform: rotate(45deg);
     opacity: 0;
+  }
+  input[type="search"] {
+    left: 0;
   }
   .products {
     width: 90%;
